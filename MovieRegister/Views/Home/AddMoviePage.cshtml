@@ -1,0 +1,78 @@
+﻿@model MovieRegister.Views.ViewModel.MovieViewModel
+
+@{
+    ViewBag.Title = "Movie Register";
+}
+
+@{ Html.EnableClientValidation(); }
+
+<div id="AddMovie" class="list-group">
+
+    <h2>Add movie</h2>
+
+    @{ using (Html.BeginForm())
+        {
+            <fieldset>
+                <ol>
+                    <li>
+                        @Html.LabelFor(Model => Model.Title)
+                        @Html.TextBoxFor(Model => Model.Title)
+                        @Html.ValidationMessageFor(Model => Model.Title, String.Empty, new { @style = "color:red;" })
+                    </li>
+                    <li>
+                        @Html.LabelFor(Model => Model.Description)
+                        @Html.TextAreaFor(Model => Model.Description)
+                        @Html.ValidationMessageFor(Model => Model.Description, String.Empty, new { @style = "color:red;" })
+                    </li>
+                    <li>
+                        @Html.LabelFor(Model => Model.Length)
+                        @Html.TextBoxFor(Model => Model.Length)
+                        @Html.ValidationMessageFor(Model => Model.Length, String.Empty, new { @style = "color:red;" })
+                    </li>
+                    <li>
+                        @Html.LabelFor(Model => Model.Genre)
+                        @Html.TextBoxFor(Model => Model.Genre)
+                        @Html.ValidationMessageFor(Model => Model.Genre, String.Empty, new { @style = "color:red;" })
+                    </li>
+                    <li>
+                        @Html.LabelFor(Model => Model.Year)
+                        @Html.TextBoxFor(Model => Model.Year)
+                        @Html.ValidationMessageFor(Model => Model.Year, String.Empty, new { @style = "color:red;" })
+                    </li>
+                    <li>
+                        <input type="submit" value="Add movie" />
+                    </li>
+                </ol>
+            </fieldset>
+        }
+    }
+</div>
+
+
+
+@*<form method="post">
+        <ol>
+            <li>
+                <label>Title:</label>
+                <input type="text" name="title" />
+            </li>
+            <li>
+                <label>Description:</label>
+                <input type="text" name="description" />
+            </li>
+            <li>
+                <label>Length:</label>
+                <input type="text" name="length" />
+            </li>
+            <li>
+                <label>Genre:</label>
+                <input type="text" name="genre" />
+            </li>
+            <li>
+                <label>Year:</label>
+                <input type="text" name="year" />
+            </li>
+        </ol>
+        <input type="submit" value="Add movie" />
+    </form>*@
+

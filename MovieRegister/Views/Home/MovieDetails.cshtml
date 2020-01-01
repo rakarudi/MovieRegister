@@ -1,0 +1,100 @@
+﻿@model MovieRegister.Views.ViewModel.MovieAndPosterViewModel
+
+@{
+    ViewBag.Title = "Movie Register";
+}
+
+<div id="MovieBlockDetaild">
+    <h2 id="DetaildTitle">@Html.DisplayFor(modelItem => Model.title)</h2>
+    <div id="InnerDetails">
+        @if (Model.Poster == "")
+        {
+            <ul>
+                <li id="MoviePosterDetaild"><img src="~/Content/Images/missing_image.jpg" alt="Movie poster" /></li>
+            </ul>
+        }
+        else
+        {
+            <ul>
+                <li id="MoviePosterDetaild"><img src="@Model.Poster" alt="Movie poster" /></li>
+            </ul>
+        }
+
+        <ul id="DetaildInformation" class="list-group-item">
+            <li>@Html.DisplayFor(modelItem => Model.description)</li>
+            <li><br /></li>
+            <li>Length: @Html.DisplayFor(modelItem => Model.length)</li>
+            <li>Genre:  @Html.DisplayFor(modelItem => Model.genre)</li>
+            <li>Year:   @Html.DisplayFor(modelItem => Model.year)</li>
+        </ul>
+    </div>
+    <input id="PlayButton" class="button" type="button" value="Play Movie"
+           onclick="@("window.location.href='" + @Url.Action("WatchMoviePage", new MovieRegister.Views.ViewModel.MovieViewModel
+                    {
+                        Title = Model.title,
+                        Description = Model.description,
+                        Length = Model.length,
+                        Genre = Model.genre,
+                        Year = Model.year,
+                        HasSeen = "true",
+                        IsFavourite = Model.isFavourite
+                    }) + "'");" />
+
+    <ul id="MovieFunctionsDetaild">
+        <li>
+            @if (Model.isFavourite == "false")
+            {
+                <a href="@Url.Action("AddFavoriteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                    {
+                                        Title = Model.title,
+                                        Description = Model.description,
+                                        Length = Model.length,
+                                        Genre = Model.genre,
+                                        Year = Model.year,
+                                        HasSeen = Model.hasSeen,
+                                        IsFavourite = Model.isFavourite
+
+                                    })"><i class="glyphicon glyphicon-star-empty"></i></a>
+            }
+            else
+            {
+                <a href="@Url.Action("RemoveFavoriteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = Model.title,
+                                    Description = Model.description,
+                                    Length = Model.length,
+                                    Genre = Model.genre,
+                                    Year = Model.year,
+                                    HasSeen = Model.hasSeen,
+                                    IsFavourite = Model.isFavourite
+
+                                })"><i class="glyphicon glyphicon-star"></i></a>
+            }
+
+            <a href="@Url.Action("DeleteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = Model.title,
+                                    Description = Model.description,
+                                    Length = Model.length,
+                                    Genre = Model.genre,
+                                    Year = Model.year,
+                                    HasSeen = Model.hasSeen,
+                                    IsFavourite = Model.isFavourite
+
+                                })"><i class="glyphicon glyphicon-trash"></i></a>
+            <a href="@Url.Action("EditMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = Model.title,
+                                    Description = Model.description,
+                                    Length = Model.length,
+                                    Genre = Model.genre,
+                                    Year = Model.year,
+                                    HasSeen = Model.hasSeen,
+                                    IsFavourite = Model.isFavourite
+
+                                })"><i class="glyphicon glyphicon-edit"></i></a>
+        </li>
+    </ul>
+</div>
+
+

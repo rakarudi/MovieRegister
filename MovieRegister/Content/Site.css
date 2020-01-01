@@ -1,0 +1,158 @@
+﻿.container {
+    padding-left: 0px;
+}
+
+#homeMainContent {
+    height: 20%;
+    width: 100%;
+}
+
+    #homeMainContent hr {
+        margin-top: 0px;
+    }
+
+    #homeMainContent h3 {
+        margin-bottom: 0px;
+    }
+
+.navbar {
+    background-color: skyblue;
+    color: azure;
+}
+
+    .navbar a {
+        color: azure;
+        font-size: 20px;
+        padding: 0;
+        padding-left: 30px;
+    }
+
+    .navbar li {
+        list-style-type: none;
+    }
+
+    .navbar h3 {
+        font-size: 30px;
+        display: inline-block;
+        float: left;
+        margin-right: 80px;
+        padding: 15px 30px;
+    }
+
+.navbar-nav {
+    margin-top: 34px;
+}
+
+#panel-footer {
+    background-color: skyblue;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+#MovieList {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+    #MovieList ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+#MovieBlock {
+    width: 20%;
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: mediumseagreen;
+    float: right;
+    width: 100px;
+    height: 40px;
+}
+
+#SearchField {
+    margin-left: 435px;
+    padding-bottom: 10px;
+}
+
+#MoviePoster img {
+    width: 229px;
+    height: 340px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#MoviePosterDetaild img {
+    width: 300px;
+    height: 470px;
+}
+
+#DetaildInformation {
+    margin-bottom: 10px;
+    margin-left: 21px;
+}
+
+    #DetaildInformation li {
+        padding-left: 20px;
+    }
+
+#InnerDetails {
+    display: inline-flex;
+}
+
+    #InnerDetails ul {
+        padding-left: 0px;
+    }
+
+#recentlyWatched a ul {
+    padding-left: 0px;
+}
+
+#recentlyWatched h3 {
+    margin-bottom: 10px;
+}
+
+#PlayButton {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.glyphicon {
+    padding-left: 6px;
+    font-size: 20px;
+}
+
+#MovieFunctionsDetaild {
+    font-size: 25px;
+    margin-left: 140px;
+    margin-top: 3px;
+    padding: 0;
+}
+
+    #MovieFunctionsDetaild i {
+        padding-left: 8px;
+    }
+
+input, textarea {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#AddMovie ol{
+    list-style-type: none;
+}
+
+#AddMovie h2{
+    padding-left:40px;
+}
+
+

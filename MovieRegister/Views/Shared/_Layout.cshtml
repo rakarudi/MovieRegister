@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <header class="container">
+            <nav class="navbar">
+                <h3 class="navbar-brand">@ViewBag.Title</h3>
+                <ul class="navbar-nav">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Movie", "Movie", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Favorites", "FavoritMovies", "Home")</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            @RenderBody()
+        </div>
+        <footer class="container" id="panel-footer">
+            <p>&copy; @DateTime.Now.Year - all rights reserved, MovieRegister AB</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

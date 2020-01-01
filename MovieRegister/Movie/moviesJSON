@@ -1,0 +1,51 @@
+{
+  "movies": {
+    "movie": [
+      {
+        "title": "Goosebumps",
+        "description": "A teenager teams up with the daughter of young adult horror author R.L. Stine after the writer's imaginary demons are set free on the town of Madison, Delaware.",
+        "length": "103",
+        "year": "2015",
+        "genre": "Action,Adventure,Comedy",
+        "hasSeen": "true",
+        "isFavourite": "false"
+      },
+      {
+        "title": "The Martian",
+        "description": "During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.",
+        "length": "144",
+        "year": "2015",
+        "genre": " Adventure, Drama, Sci-Fi",
+        "hasSeen": "false",
+        "isFavourite": "true"
+      },
+      {
+        "title": "Bridge of Spies",
+        "description": "An American lawyer is recruited by the CIA during the Cold War to help rescue a pilot detained in the Soviet Union.",
+        "length": "141",
+        "year": "2015",
+        "genre": "Biography, Drama, History",
+        "hasSeen": "false",
+        "isFavourite": "false"
+      },
+      {
+        "title": "Crimson Peak",
+        "description": "In the aftermath of a family tragedy, an aspiring author is torn between love for her childhood friend and the temptation of a mysterious outsider. Trying to escape the ghosts of her past, she is swept away to a house that breathes, bleeds - and remembers.",
+        "length": "119",
+        "year": "2015",
+        "genre": "Drama, Fantasy, Horror",
+        "hasSeen": "false",
+        "isFavourite": "false"
+      },
+      {
+        "title": "Woodlawn",
+        "description": "A gifted high school football player must learn to embrace his talent and his faith as he battles racial tensions on and off the field.",
+        "length": "123",
+        "year": "2015",
+        "genre": "Drama",
+        "hasSeen": "false",
+        "isFavourite": "true"
+      }
+    ]
+  }
+}

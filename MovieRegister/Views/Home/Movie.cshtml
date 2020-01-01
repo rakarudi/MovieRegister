@@ -1,0 +1,134 @@
+﻿@model MovieRegister.Models.MoviesAndPosters
+
+@{
+    ViewBag.Title = "Movie Register";
+}
+
+<div class="MovieMainContent">
+    <div id="MovieList">
+        <div id="SearchField">
+            @using (Html.BeginForm("Movie", "Home", FormMethod.Get))
+            {
+                @Html.TextBox("searchString")<input type="submit" value="Search" />
+            }
+        </div>
+
+        <input class="button" type="button" value="Add a movie" onclick="@("window.location.href='" + @Url.Action("AddMoviePage", "Home") + "'");" />
+
+
+        <!-- TODO: Also add a search button that is connected to movies/searchString-->
+        <!--Here a foreach can be ande on the Model.Modelname to retrive more than one item, this require an collection-->
+
+        @if (Model.Movies.Count() == 0)
+        {
+            <ul class="list-group-item">
+                <li>There was no matching movie.</li>
+            </ul>
+        }
+        else
+        {
+            int count = 0;
+
+            foreach (var item in Model.Movies)
+            {
+                <div class="list-group-item" id="MovieBlock">
+
+                    @if (Model.Posters[count] == "")
+                    {
+                        <a href="@Url.Action("MovieDetails", new MovieRegister.Views.ViewModel.MovieAndPosterViewModel
+                            {
+                                Poster = "",
+                                title = item.title,
+                                description = item.description,
+                                length = item.length,
+                                genre = item.genre,
+                                year = item.year,
+                                hasSeen = item.hasSeen,
+                                isFavourite = item.isFavourite
+                            })"><ul><li id="MoviePoster"><img src="~/Content/Images/missing_image.jpg" alt="Movie poster" /></li></ul></a>
+
+                        count++;
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("MovieDetails", new MovieRegister.Views.ViewModel.MovieAndPosterViewModel
+                            {
+                                Poster = Model.Posters[count],
+                                title = item.title,
+                                description = item.description,
+                                length = item.length,
+                                genre = item.genre,
+                                year = item.year,
+                                hasSeen = item.hasSeen,
+                                isFavourite = item.isFavourite
+                            })"><ul><li id="MoviePoster"><img src="@Model.Posters[count]" alt="Movie poster" /></li></ul></a>
+                        count++;
+                    }
+                    <ul>
+                        <li>Title:  @Html.DisplayFor(modelItem => item.title)</li>
+                        <li>Length: @Html.DisplayFor(modelItem => item.length)</li> <!-- <li>Html.DisplayFor(modelItem => item.description)</li> <li> Html.DisplayFor(modelItem => item.hasSeen)</li><li> Html.DisplayFor(modelItem => item.isFavourite)</li> use for later-->
+                        <li>Genre:  @Html.DisplayFor(modelItem => item.genre)</li>
+                        <li>Year:   @Html.DisplayFor(modelItem => item.year)</li>
+                    </ul>
+                    <ul>
+                        <li>
+                            @if (item.isFavourite == "false")
+                            {
+                                <a href="@Url.Action("AddFavoriteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                    {
+                                        Title = item.title,
+                                        Description = item.description,
+                                        Length = item.length,
+                                        Genre = item.genre,
+                                        Year = item.year,
+                                        HasSeen = item.hasSeen,
+                                        IsFavourite = item.isFavourite
+
+                                    })"><i class="glyphicon glyphicon-star-empty"></i></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("RemoveFavoriteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = item.title,
+                                    Description = item.description,
+                                    Length = item.length,
+                                    Genre = item.genre,
+                                    Year = item.year,
+                                    HasSeen = item.hasSeen,
+                                    IsFavourite = item.isFavourite
+
+                                })"><i class="glyphicon glyphicon-star"></i></a>
+                            }
+
+                            <a href="@Url.Action("DeleteMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = item.title,
+                                    Description = item.description,
+                                    Length = item.length,
+                                    Genre = item.genre,
+                                    Year = item.year,
+                                    HasSeen = item.hasSeen,
+                                    IsFavourite = item.isFavourite
+
+                                })"><i class="glyphicon glyphicon-trash"></i></a>
+                            <a href="@Url.Action("EditMovie", new MovieRegister.Views.ViewModel.MovieViewModel
+                                {
+                                    Title = item.title,
+                                    Description = item.description,
+                                    Length = item.length,
+                                    Genre = item.genre,
+                                    Year = item.year,
+                                    HasSeen = item.hasSeen,
+                                    IsFavourite = item.isFavourite
+
+                                })"><i class="glyphicon glyphicon-edit"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            }
+        }
+
+    </div>
+</div>
+
