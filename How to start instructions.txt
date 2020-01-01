@@ -1,0 +1,5 @@
+How do i start the project?
+
+Step 1: Open the MovieRegister.snl wich is located at the same filelocation as this instruction. (Open by dubble tapping the .sln file)
+Step 2: When the project is opend in Visual studio press CTRL + F5 to run the project.
+Step 3: Enjoy.
