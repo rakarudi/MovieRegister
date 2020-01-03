@@ -1,0 +1,31 @@
+
+On startup of the project you get directed to the Home of the application.
+Here we can se what movies we recently watched so we easly can find them and continue watching.
+We can also navigate to Home by using the navigation bar at the top of the page.
+
+In the navigation bar we also have Movie and Favorits.
+If we press favorits we se a list with all movies that is our favorits.
+
+If we press Movie we can see all the movies in the database(XML-file)
+On this page we also get the opportunity to search for movies, here we can search for part of title, description and also genre.
+
+On all movies we have three buttons to press. A star, a bin and also a edit button.
+
+The star can favoritise a movie or un-favoritise.
+The bin can remove a movie completly from the Movie Register. (WARNING! Developer have been sloppy and not added a "Do you really want to delete this movie?")
+The edit can edit a movie and takes us to the editmovie page.
+
+On the Movie page we also have a button called "Add a movie"
+With this button we can add a new movie to the Movie Register.
+
+Pressing the button takes us to the Addmovie page where we have to enter all the data of the movie.
+If a movietitle is a correct one the poster of the movie will automaticly be added for us.
+
+On all pages we can press a movie to show more detaild information about the movie.
+Here we can see the description and also all other data of the movie.
+
+We can also "Watch the movie" by pressing "Play Movie" and now you would be very impressed if you really could watch the movie.
+The only thing "Play Movie" button dose is making the movie recently watched and now it will be displayed on the Home with the other recently watched movies.
+
+
+I belive this is all the Movie register can do and i hope you are pleased with the Register!
