@@ -1,5 +1,13 @@
 How do i start the project?
 
 Step 1: Open the MovieRegister.snl wich is located at the same filelocation as this instruction. (Open by dubble tapping the .sln file)
-Step 2: When the project is opend in Visual studio press CTRL + F5 to run the project.
+Step 2: Edit the file location for the XML(database) file so that movies can be loaded.
+     2.1: Epand Models and open up DataConnector.cs
+     2.2: The XML file is found in Contet -> Movie and is named movies.xml.
+     2.3: When you open up both locations you can simply drag and dropp the movies.xml into the "". Make sure you add the path inside the ""!
+     2.4: You ight have to change all \ to / so the path looks like:
+	  Correct format: "C:/this/is/correct/one.xml"
+            Wrong format: "C:\this\is\wrong\format\two.xml"
+
+Step 2: Now when the path to XML(database) is set we can press CTRL + F5 to run the project.
 Step 3: Enjoy.

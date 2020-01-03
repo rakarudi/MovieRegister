@@ -14,7 +14,9 @@ namespace MovieRegister.Models
     public class DataConnector
     {
         //Connection string towards XML file. (Could have been stored in a config file)
-        string fileLocation = "C:/Users/anton/source/repos/MovieRegister/Content/Movie/movies.xml";
+        // XML filepath have to be added to string below!
+
+        string fileLocation = ""; // Add filepath here!
         
         // The connector that makes the connection towards the XML file.
         // Connector is used in Add, Delete and Edit Data.
